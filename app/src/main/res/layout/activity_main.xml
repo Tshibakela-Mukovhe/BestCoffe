@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        tools:context="com.tshibakela.bestcoffee.MainActivity"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            app:srcCompat="@drawable/jh" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Jacob's Tea" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <CheckBox
+                android:id="@+id/ch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                android:text="Jacob With Sugar"
+                android:textStyle="bold|italic" />
+
+            <EditText
+                android:id="@+id/j1"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_weight="0.50"
+                android:text=" Order" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/ch2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="With No Sugar" />
+
+            <EditText
+                android:id="@+id/j2"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="88dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/ch3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hot Tea" />
+
+            <EditText
+                android:id="@+id/j3"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="127dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/ch4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Warm Tea" />
+
+            <EditText
+                android:id="@+id/j4"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="113.5dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_weight="0.15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount R" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:layout_weight="0.13"
+                android:inputType="number"
+                android:text="0" />
+
+
+            <TextView
+                android:id="@+id/quant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="54dp"
+
+                android:padding="8dp"
+                android:text="Tot Price" />
+
+            <TextView
+                android:id="@+id/pr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="0" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Cancel Order"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/ord"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="60dp"
+                android:padding="3dp"
+                android:text="Order"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/rec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Receipt"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+    </LinearLayout>
+</ScrollView>

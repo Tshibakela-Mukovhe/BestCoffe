@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/jh"
+    tools:context="com.tshibakela.bestcoffee.Main2Activity"
+    android:weightSum="1">
+
+
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="14dp"
+        android:scaleX="3"
+        android:text="Your Receipt:"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/transparent"
+        android:text="Order list Costs"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/r1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/r2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/r3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/r4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_margin="8dp"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:id="@+id/changes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Your Change"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/r5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="normal|italic" />
+
+    <Button
+        android:id="@+id/again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:scaleX="2"
+        android:scrollX="1dp"
+        android:scrollY="4dp"
+        android:text="Order Again Here"
+        android:textAllCaps="false" />
+
+
+</LinearLayout>
+</ScrollView>
