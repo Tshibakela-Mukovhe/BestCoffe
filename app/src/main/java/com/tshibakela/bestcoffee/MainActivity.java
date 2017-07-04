@@ -2,10 +2,9 @@ package com.tshibakela.bestcoffee;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.constraint.solver.widgets.Snapshot;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,27 +12,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.R.attr.order;
-import static android.R.attr.start;
-import static com.tshibakela.bestcoffee.R.drawable.j;
-
-import static com.tshibakela.bestcoffee.R.id.again;
-import static com.tshibakela.bestcoffee.R.id.quant;
-
 
 public class MainActivity extends AppCompatActivity {
+    public static Button exit, cancel, rec, ord;
+    public static TextView pr;
+    public static EditText j1, amount, j2, j3, j4;
+    public static int quantity0 = 0;
+    public static int quantity1 = 0;
+    public static int quantity2 = 0;
+    public static int quantity3 = 0;
+    public static int quantity4 = 0;
+    public static int quantity5 = 0;
+    public static int quantum = 0;
+    public static double total, price, price1, price2, price3, price4, change;
     String details;
-    private Button add, cancel, sub, rec, ord;
-
-    private TextView disp, list, pr, tot;
-    private EditText j1,amount, j2, j3, j4;
-
-    public static int quantity0 = 0, quantity1=0, quantity2=0, quantity3=0, quantity4=0, quantity5=0;
-
-
-
-    public static double total, price,price1, price2, price3, price4, change, quantum;
-
     private CheckBox ch1, ch2, ch3, ch4;
 
     @Override
@@ -52,37 +44,10 @@ public class MainActivity extends AppCompatActivity {
         j4 = (EditText) findViewById(R.id.j4);
 
 
-    /* I removed add and sub
-     *add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                quantity = quantity + 1;
-                String add = String.valueOf(quantity);
-                disp.setText("" + quantity);
-            }
-        });
 
-
-//for reducing the order number we use the following
-        sub = (Button) findViewById(R.id.sub);
-
-        sub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (quantity == 1) {
-                    return;
-                }
-
-                quantity = quantity - 1;
-                // String sub=String.valueOf(quantity); this is not useful for case where we need positive numbers only
-                disp.setText("" + quantity);
-            }
-        });
-*/
 
 //for order price after setting order numbers
-
+        exit = (Button) findViewById(R.id.exit);
         ord = (Button) findViewById(R.id.ord);
         pr = (TextView) findViewById(R.id.pr);
         amount= (EditText) findViewById(R.id.amount);
@@ -97,10 +62,17 @@ public class MainActivity extends AppCompatActivity {
 // for Sugar tea...................................
                 if (ch1.isChecked()) {
 
-                    quantity0 = Integer.parseInt(j1.getText().toString());  //This we use to convert to string #editText
+                    if (j1.getText().toString().equals("")) {
+                        Toast.makeText(MainActivity.this, "Invalid Order!!!", Toast.LENGTH_SHORT).show();
+                    } else {
 
 
-                    price = (12.99 * quantity0);
+                        quantity0 = Integer.parseInt(j1.getText().toString());  //This we use to convert to string #editText
+
+
+                        price = (12.99 * quantity0);
+
+                    }
                     //   String ord = String.valueOf(quantity);
                 } else {
 
@@ -111,8 +83,14 @@ public class MainActivity extends AppCompatActivity {
 
                 if (ch2.isChecked()) {
 
+                    if (j2.getText().toString().equals("")) {
+                        Toast.makeText(MainActivity.this, "Invalid Order!!", Toast.LENGTH_SHORT).show();
+                    } else {
+
+
                     quantity1 = Integer.parseInt(j2.getText().toString());
                     price1 = (11 * quantity1);
+                    }
                 } else {
 
                     price1 = 0;
@@ -120,25 +98,56 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (ch3.isChecked()) {
+
+                    if (j3.getText().toString().equals("")) {
+
+                        Toast.makeText(MainActivity.this, "Invalid Order!", Toast.LENGTH_SHORT).show();
+
+                    } else {
                     quantity2 = Integer.parseInt(j3.getText().toString());
                     price2 = (15.99 * quantity2);
 
+                    }
                 } else {
                     price2 = 0;
                     quantity2=0;
                 }
 
                 if (ch4.isChecked()) {
+
+                    if (j4.getText().toString().equals("")) {
+                        Toast.makeText(MainActivity.this, "invalid Order", Toast.LENGTH_SHORT).show();
+                    } else {
                     quantity3 = Integer.parseInt(j4.getText().toString());
-                    price3 = 14.99 * quantity3;
+                        price3 = 14.99 * quantity3;
+                    }
                 } else {
                     price3 = 0;
                     quantity3=0;
+
+
+                }
+
+                if (quantum == 0) {
+
+                    Toast.makeText(MainActivity.this, "Enter Amount For Purchase Not less than Cost ", Toast.LENGTH_SHORT).show();
+
+
+                } /**else
+                 {
+                 Toast.makeText(MainActivity.this,"You have Enterd Amount!!", Toast.LENGTH_SHORT).show();
+                 }**/
+
+                if (amount.getText().toString().equals("")) {
+                    Toast.makeText(MainActivity.this, "You have entered invalid Amount", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "You have Enterd Amount!!", Toast.LENGTH_SHORT).show();
+                    quantum = Integer.parseInt(amount.getText().toString());
                 }
 
 
                 total = price + price1 + price2 + price3 + price4;
-                quantum=Integer.parseInt(amount.getText().toString());
+
                 change=quantum-total;
 
                 pr.setText(String.valueOf("R" + total));
@@ -152,8 +161,20 @@ public class MainActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Intent i=new Intent(MainActivity.this,MainActivity.class);
-                startActivity(i);
+
+
+                price3 = price1 = price = price2 = price4 = price4 = quantum = 0;
+                quantity0 = quantity1 = quantity2 = quantity3 = quantity4 = quantity5 = 0;
+                total = 0;
+
+                pr.setText(String.valueOf("R" + total));
+                amount.setText(String.valueOf(quantum));
+                j1.setText(String.valueOf(quantity0));
+                j2.setText(String.valueOf(quantity1));
+                j3.setText(String.valueOf(quantity2));
+                j4.setText(String.valueOf(quantity3));
+
+
 
 
                // disp.setText("You have cancelled ");
@@ -171,7 +192,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 //-------------------------------------------------Here is for Popo dialog-----------------------------
-                if (quantum>=total)
+
+                if (total >= quantum)
                 {
 
                     AlertDialog.Builder alertDialogBuilder= new AlertDialog.Builder(MainActivity.this);
@@ -198,21 +220,69 @@ public class MainActivity extends AppCompatActivity {
 
 
                 }
-
+//===================================For valid price and amount not less than cost price==========================
                 else {
 
-                    AlertDialog.Builder alertDialogBuilder=new AlertDialog.Builder(Main2Activity.class)
 
-                    Intent i = new Intent(MainActivity.this, Main2Activity.class);
-                    startActivity(i);
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                    alertDialogBuilder.setMessage("Do you want to Purchase?");
+                    alertDialogBuilder.setNegativeButton("Procede", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+
+                            Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                            startActivity(i);
+                        }
+                    });
+                    alertDialogBuilder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+
+
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+
+
                     Toast.makeText(MainActivity.this, "You Have Submit Your Order For payments", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
+
+
         });
 
 
+//===========================For exit=============================================
+
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+                alertDialogBuilder.setMessage("Do you want to Exit?");
+                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        onResume();
+                    }
+                });
+                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+            }
+        });
 
         //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[      END      ]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
 

@@ -1,27 +1,21 @@
 package com.tshibakela.bestcoffee;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-import static android.os.Build.VERSION_CODES.M;
-import static com.tshibakela.bestcoffee.MainActivity.price1;
-import static com.tshibakela.bestcoffee.MainActivity.price2;
-import static com.tshibakela.bestcoffee.MainActivity.price3;
-import static com.tshibakela.bestcoffee.MainActivity.price4;
-import static com.tshibakela.bestcoffee.MainActivity.total;
-import static com.tshibakela.bestcoffee.R.id.ch1;
-import static com.tshibakela.bestcoffee.R.id.r1;
-import static com.tshibakela.bestcoffee.R.id.r2;
+import static com.tshibakela.bestcoffee.MainActivity.quantum;
 
 public class Main2Activity extends AppCompatActivity {
-    private TextView list,changes, r1, r2, r3, r4, r5;
+    private TextView list, changes, r1, r2, r3, r4, r5, pr;
     private Button rec, again;
-    public int quantity0, quantity1, quantity2, quantity3, quantity4;
+    private EditText j1, j2, j3, j4, amount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +28,8 @@ public class Main2Activity extends AppCompatActivity {
         r3= (TextView) findViewById(R.id.r3);
         r4= (TextView) findViewById(R.id.r4);
         r5= (TextView) findViewById(R.id.r5);
+
+
         changes= (TextView) findViewById(R.id.changes);
 
 //====================================For the Receipt===================
@@ -80,11 +76,11 @@ public class Main2Activity extends AppCompatActivity {
 
                 r4.setText(String.valueOf("You have ordered " + MainActivity.quantity4 + "\n" + "R" + MainActivity.price4));
             }
-        if (MainActivity.change < MainActivity.total){
+        if (quantum < MainActivity.total) {
 
             changes.setText("You cannot purchase you money is not enough!!!");
         } else {
-            changes.setText(String.valueOf("Toatal Cost R" + MainActivity.total + "\n Purchase Amount R " + MainActivity.quantum + "\n Your Change is R " + MainActivity.change));
+            changes.setText(String.valueOf("Toatal Cost R" + MainActivity.total + "\n Purchase Amount R " + quantum + "\n Your Change is R " + MainActivity.change));
             r5.setText("Thank You!! You can order again!!!!!");
         }
 
@@ -95,8 +91,56 @@ public class Main2Activity extends AppCompatActivity {
         again.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(Main2Activity.this,MainActivity.class);
-                startActivity(i);
+
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Main2Activity.this);
+                alertDialogBuilder.setMessage("Do you want to order Again?");
+                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        onResume();
+                    }
+                });
+
+                alertDialogBuilder.setNeutralButton("Go back For exit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+
+
+                    }
+                });
+
+
+                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        MainActivity.quantum = 0;
+                        MainActivity.quantity0 = 0;
+                        MainActivity.quantity1 = 0;
+                        MainActivity.quantity2 = 0;
+                        MainActivity.quantity3 = 0;
+                        MainActivity.quantity4 = 0;
+                        MainActivity.total = 0;
+                        MainActivity.price3 = 0;
+                        MainActivity.price = 0;
+                        MainActivity.price2 = 0;
+                        MainActivity.price4 = 0;
+                        MainActivity.price1 = 0;
+
+                        Intent intent = new Intent(Main2Activity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+                AlertDialog alertDialog = alertDialogBuilder.create();
+                alertDialog.show();
+
+
+                // Intent i= new Intent(Main2Activity.this,MainActivity.class);
+                //  startActivity(i);
 
 
 

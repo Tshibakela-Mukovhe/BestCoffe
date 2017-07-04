@@ -3,15 +3,15 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/jh"
-    tools:context="com.tshibakela.bestcoffee.Main2Activity"
-    android:weightSum="1">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/jh"
+            android:orientation="vertical"
+            android:weightSum="1"
+            tools:context="com.tshibakela.bestcoffee.Main2Activity">
 
 
 
@@ -30,8 +30,8 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="3dp"
         android:layout_margin="8dp"
+        android:layout_marginBottom="3dp"
         android:layout_marginTop="14dp"
         android:background="@android:color/transparent"
         android:text="Order list Costs"
@@ -42,8 +42,8 @@
         android:id="@+id/r1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_margin="8dp"
+        android:text="TextView"
         android:textColor="@android:color/background_dark"
         android:textStyle="normal|bold" />
 
@@ -51,8 +51,8 @@
         android:id="@+id/r2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_margin="8dp"
+        android:text="TextView"
         android:textColor="@android:color/background_dark"
         android:textStyle="normal|bold" />
 
@@ -60,8 +60,8 @@
         android:id="@+id/r3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_margin="8dp"
+        android:text="TextView"
         android:textColor="@android:color/background_dark"
         android:textStyle="normal|bold" />
 
@@ -69,8 +69,8 @@
         android:id="@+id/r4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_margin="8dp"
+        android:text="TextView"
         android:textColor="@android:color/background_dark"
         android:textStyle="normal|bold" />
 
@@ -86,8 +86,8 @@
         android:id="@+id/r5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_marginLeft="8dp"
+        android:text="TextView"
         android:textColor="@color/colorAccent"
         android:textStyle="normal|italic" />
 
@@ -99,7 +99,7 @@
         android:scaleX="2"
         android:scrollX="1dp"
         android:scrollY="4dp"
-        android:text="Order Again Here"
+        android:text="Order Again / Exit"
         android:textAllCaps="false" />
 
 

@@ -16,8 +16,8 @@
         android:paddingRight="16dp"
         android:paddingStart="16dp"
         android:paddingTop="16dp"
-        tools:context="com.tshibakela.bestcoffee.MainActivity"
-        android:weightSum="1">
+        android:weightSum="1"
+        tools:context="com.tshibakela.bestcoffee.MainActivity">
 
         <ImageView
             android:id="@+id/imageView"
@@ -154,44 +154,58 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_margin="8dp"
+            android:layout_weight="0.10"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Amount R" />
+
+            <EditText
+                android:id="@+id/amount"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="9dp"
+
+                android:layout_weight="15.57"
+                android:inputType="number"
+                android:padding="8dp"
+                android:text="0" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:layout_margin="8dp"
+            android:layout_weight="0.10"
             android:orientation="horizontal"
-            android:weightSum="1"
-            android:layout_weight="0.15">
+            android:weightSum="1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Amount R" />
 
-            <EditText
-                android:id="@+id/amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
-                android:layout_weight="0.13"
-                android:inputType="number"
-                android:text="0" />
 
 
             <TextView
                 android:id="@+id/quant"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="54dp"
-
-                android:padding="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="2.43"
+                android:padding="1dp"
                 android:text="Tot Price" />
 
             <TextView
                 android:id="@+id/pr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="150dp"
                 android:text="0" />
 
 
@@ -228,5 +242,13 @@
             android:layout_height="wrap_content"
             android:text="Order Receipt"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_weight="0.31"
+            android:text="Exit" />
     </LinearLayout>
 </ScrollView>
